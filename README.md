@@ -11,5 +11,5 @@ test bench_pulldown_cmark_article      ... bench:     120,696 ns/iter (+/- 4,870
 test bench_pulldown_cmark_awesome_rust ... bench:   1,566,658 ns/iter (+/- 60,216)
 ```
 
-It only has 2 samples right now a medium length article and the readme of 
+It only has 2 samples right now a medium length article and the readme of
 [awesome-rust](https://github.com/rust-unofficial/awesome-rust) which is pretty long.

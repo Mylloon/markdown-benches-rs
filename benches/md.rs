@@ -1,12 +1,13 @@
 #![feature(test)]
-extern crate test;
-extern crate pulldown_cmark;
 extern crate comrak;
+extern crate markdown;
+extern crate pulldown_cmark;
+extern crate test;
 #[macro_use]
 extern crate lazy_static;
 
-use pulldown_cmark::{Parser, html};
 use comrak::{markdown_to_html, ComrakOptions};
+use pulldown_cmark::{html, Parser};
 
 lazy_static! {
     // one of my article, medium length
@@ -28,9 +29,7 @@ fn bench_pulldown_cmark_article(b: &mut test::Bencher) {
 
 #[bench]
 fn bench_comrak_article(b: &mut test::Bencher) {
-    b.iter(||
-        markdown_to_html(&ARTICLE, &ComrakOptions::default())
-    );
+    b.iter(|| markdown_to_html(&ARTICLE, &ComrakOptions::default()));
 }
 #[bench]
 fn bench_pulldown_cmark_awesome_rust(b: &mut test::Bencher) {
@@ -45,6 +44,8 @@ fn bench_pulldown_cmark_awesome_rust(b: &mut test::Bencher) {
 
 #[bench]
 fn bench_comrak_awesome_rust(b: &mut test::Bencher) {
+    b.iter(|| markdown_to_html(&AWESOME_RUST, &ComrakOptions::default()));
+}
     b.iter(||
         markdown_to_html(&AWESOME_RUST, &ComrakOptions::default())
     );
