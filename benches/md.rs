@@ -7,6 +7,7 @@ extern crate test;
 extern crate lazy_static;
 
 use comrak::{markdown_to_html, ComrakOptions};
+use markdown::to_html;
 use pulldown_cmark::{html, Parser};
 
 lazy_static! {
@@ -31,6 +32,12 @@ fn bench_pulldown_cmark_article(b: &mut test::Bencher) {
 fn bench_comrak_article(b: &mut test::Bencher) {
     b.iter(|| markdown_to_html(&ARTICLE, &ComrakOptions::default()));
 }
+
+#[bench]
+fn bench_markdown_rs_article(b: &mut test::Bencher) {
+    b.iter(|| to_html(&ARTICLE));
+}
+
 #[bench]
 fn bench_pulldown_cmark_awesome_rust(b: &mut test::Bencher) {
     b.iter(|| {
@@ -46,7 +53,8 @@ fn bench_pulldown_cmark_awesome_rust(b: &mut test::Bencher) {
 fn bench_comrak_awesome_rust(b: &mut test::Bencher) {
     b.iter(|| markdown_to_html(&AWESOME_RUST, &ComrakOptions::default()));
 }
-    b.iter(||
-        markdown_to_html(&AWESOME_RUST, &ComrakOptions::default())
-    );
+
+#[bench]
+fn bench_markdown_rs_awesome_rust(b: &mut test::Bencher) {
+    b.iter(|| to_html(&AWESOME_RUST));
 }
