@@ -4,6 +4,6 @@ version = "0.1.0"
 authors = ["Vincent Prouillet <vincent@wearewizards.io>"]
 
 [dependencies]
-comrak = "0"
-pulldown-cmark = "0.1.0"
+comrak = "0.18.0"
+pulldown-cmark = "0.9.2"
 lazy_static = "1"
