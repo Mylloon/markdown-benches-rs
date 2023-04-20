@@ -5,12 +5,12 @@ Compares [pulldown_cmark](https://github.com/google/pulldown-cmark),
 [markdown-rs](https://github.com/wooorm/markdown-rs).
 
 ```bash
-test bench_comrak_article              ... bench:     137,516 ns/iter (+/- 3,772)
-test bench_comrak_awesome_rust         ... bench:   1,397,234 ns/iter (+/- 20,278)
-test bench_markdown_rs_article         ... bench:   1,616,042 ns/iter (+/- 62,861)
-test bench_markdown_rs_awesome_rust    ... bench:  16,967,376 ns/iter (+/- 1,502,322)
-test bench_pulldown_cmark_article      ... bench:      40,973 ns/iter (+/- 1,108)
-test bench_pulldown_cmark_awesome_rust ... bench:     611,563 ns/iter (+/- 17,536)
+test bench_comrak_article              ... bench:     150,062 ns/iter (+/- 37,905)
+test bench_comrak_awesome_rust         ... bench:   3,267,189 ns/iter (+/- 1,081,891)
+test bench_markdown_rs_article         ... bench:   1,653,713 ns/iter (+/- 90,975)
+test bench_markdown_rs_awesome_rust    ... bench:  40,706,485 ns/iter (+/- 4,468,671)
+test bench_pulldown_cmark_article      ... bench:      43,833 ns/iter (+/- 5,542)
+test bench_pulldown_cmark_awesome_rust ... bench:   1,399,065 ns/iter (+/- 180,537)
 ```
 
 It has 3 samples right now a medium length article and the readme of
